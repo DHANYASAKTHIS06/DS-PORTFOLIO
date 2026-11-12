@@ -8,7 +8,8 @@ import {
   FaHandshake,
   FaGithub,
   FaExternalLinkAlt,
-  FaBrain
+  FaBrain,
+  FaWind
 } from 'react-icons/fa';
 
 export default function Projects() {
@@ -58,6 +59,15 @@ export default function Projects() {
       isML: false,
       icon: 'briefcase',
     },
+    {
+      title: 'AERO-DETECTIVE',
+      desc: 'Developed a Machine Learning-based air quality monitoring system that analyzes air pollutants and predicts the Air Quality Index (AQI). Provides insights into pollution levels, identifies potential air quality risks, and suggests preventive measures to reduce exposure. Helps users make informed decisions through data-driven air quality predictions.',
+      demoLink: 'https://airfrontend-6ngd.vercel.app/',
+      githubLink: 'https://github.com/DHANYASAKTHIS06/airfrontend',
+      techStack: ['React.js', 'Scikit-learn', 'Flask', 'MongoDB', 'Recharts', 'Leaflet'],
+      isML: true,
+      icon: 'wind',
+    },
   ];
 
   const getIcon = (iconName) => {
@@ -74,6 +84,8 @@ export default function Projects() {
         return <FaBriefcase className="project-icon-svg" />;
       case 'handshake':
         return <FaHandshake className="project-icon-svg" />;
+      case 'wind':
+        return <FaWind className="project-icon-svg" />;
       default:
         return <FaLaptopCode className="project-icon-svg" />;
     }
