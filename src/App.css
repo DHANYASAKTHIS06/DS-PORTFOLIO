@@ -1,0 +1,71 @@
+/* App-level global styles */
+body, html, #root {
+  margin: 0;
+  padding: 0;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: #050816; /* Dark navy background */
+  color: #fff;
+  scroll-behavior: smooth;
+}
+
+a {
+  text-decoration: none;
+}
+
+button {
+  outline: none;
+}
+
+section {
+  width: 100%;
+}
+
+/* Scrollbar customization */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #00e5ff; /* Cyan scrollbar */
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-track {
+  background: #050816;
+}
+
+/* Common neon text glow */
+.neon-text {
+  color: #00e5ff;
+  text-shadow: 0 0 5px #00e5ff, 0 0 10px #00bfff, 0 0 20px #00bfff;
+}
+
+/* General container for all sections */
+.container {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+/* Down arrow button common for all sections */
+.section-down-btn {
+  margin-top: 24px;
+  background: transparent;
+  border: 2px solid rgba(0, 229, 255, 0.15);
+  color: #00e5ff;
+  padding: 10px 12px;
+  border-radius: 12px;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 28px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.section-down-btn:hover {
+  transform: scale(1.3);
+  box-shadow: 0 0 20px #00bfff, 0 0 30px #00e5ff;
+  border-color: #00e5ff;
+}

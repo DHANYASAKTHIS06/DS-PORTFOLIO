@@ -1,0 +1,24 @@
+/* index.css */
+@import './styles/home.css';
+@import './styles/hero.css';
+@import './styles/about.css';
+@import './styles/journey.css';
+@import './styles/projects.css';
+@import './styles/skills.css';
+@import './styles/tabs.css';
+@import './styles/resume.css';
+@import './styles/blogs.css';
+@import './styles/feedback.css';
+@import './styles/AcademicProfile.css';
+@import './styles/CertificateGallery.css';
+@import './styles/experience.css';
+@import './styles/contact.css';
+/* Global styles */
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: #050816; /* Deep dark navy background */
+  color: #fff;
+  overflow-x: hidden;
+}

@@ -1,0 +1,219 @@
+/* BACKGROUND IMAGE WITH BLUR */
+.contact-section {
+  position: relative;
+  width: 100%;
+  min-height: 90vh;
+  padding: 70px 40px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  overflow: hidden;
+  background: #050816; /* Deep dark navy background */
+}
+
+.bg-overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(5, 8, 22, 0.7);
+}
+
+/* TITLE */
+.contact-title {
+  font-size: 48px;
+  color: #00e5ff; /* Cyan */
+  z-index: 2;
+  margin-bottom: 40px;
+  text-shadow: 0 0 12px #00bfff, 0 0 25px #00e5ff;
+  animation: fadeDown 1s ease forwards;
+}
+
+/* CARD */
+.contact-card {
+  z-index: 2;
+  width: 95%;
+  max-width: 600px;
+  background: rgba(10, 15, 31, 0.6); /* Cyber dark navy */
+  padding: 30px;
+  border-radius: 15px;
+  backdrop-filter: blur(12px);
+  border: 1px solid rgba(0, 229, 255, 0.25);
+  box-shadow: 0 0 20px #00e5ff, 0 0 30px #00bfff;
+  animation: glowPulse 3s infinite ease-in-out;
+}
+
+/* CONTACT ITEMS */
+.contact-item {
+  margin-bottom: 22px;
+  text-align: center;
+  opacity: 0;
+  transform: translateY(40px);
+  animation: slideUp 1s forwards;
+}
+
+.contact-item h3 {
+  color: #eafbff;
+  text-shadow: 0 0 8px #00bfff;
+}
+
+.contact-item p,
+.contact-item a {
+  color: #00e5ff;
+  font-size: 18px;
+  text-decoration: none;
+}
+
+/* DELAYS */
+.delay-1 {
+  animation-delay: 0.3s !important;
+}
+
+.delay-2 {
+  animation-delay: 0.6s !important;
+}
+
+/* LINKEDIN LOGO */
+.linkedin-link {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  justify-content: center;
+  color: #a8d8ff;
+  font-weight: bold;
+  text-decoration: none;
+  transition: 0.3s;
+}
+
+.linkedin-logo {
+  width: 30px;
+  filter: drop-shadow(0 0 10px #00aaff);
+}
+
+.linkedin-link:hover {
+  color: white;
+  transform: scale(1.1);
+}
+
+/* FLOATING ANIMATED RINGS */
+.floating-ring,
+.floating-ring2 {
+  position: absolute;
+  border: 3px solid #00bfff;
+  border-radius: 50%;
+  animation: rotate 10s linear infinite;
+  opacity: 0.5;
+}
+
+.floating-ring {
+  width: 350px;
+  height: 350px;
+  top: 10%;
+  left: -120px;
+  animation-duration: 16s;
+}
+
+.floating-ring2 {
+  width: 250px;
+  height: 250px;
+  bottom: 8%;
+  right: -80px;
+  animation-duration: 12s;
+}
+
+/* ANIMATIONS */
+@keyframes slideUp {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeDown {
+  from {
+    opacity: 0;
+    transform: translateY(-40px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes glowPulse {
+  0% {
+    box-shadow: 0 0 15px #00bfff;
+  }
+  50% {
+    box-shadow: 0 0 35px #00e5ff, 0 0 55px #00bfff;
+  }
+  100% {
+    box-shadow: 0 0 15px #00bfff;
+  }
+}
+
+@keyframes rotate {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@media (max-width: 768px) {
+  .contact-section {
+    padding: 60px 20px;
+  }
+  .contact-title {
+    font-size: 40px;
+    margin-bottom: 30px;
+  }
+  .contact-card {
+    padding: 24px;
+    width: 100%;
+  }
+}
+
+@media (max-width: 576px) {
+  .contact-section {
+    padding: 50px 16px !important;
+  }
+  .contact-title {
+    font-size: 32px !important;
+  }
+  .contact-card {
+    padding: 24px 16px !important;
+    width: 100% !important;
+  }
+  .contact-item {
+    margin-bottom: 26px !important;
+  }
+  .contact-item h3 {
+    font-size: 20px !important;
+    margin-bottom: 8px;
+  }
+  .contact-item p,
+  .contact-item a {
+    font-size: 16px !important;
+    word-break: break-all;
+  }
+  .linkedin-link {
+    display: inline-flex !important;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+    padding: 14px 28px !important;
+    background: rgba(0, 229, 255, 0.08) !important;
+    border: 1.5px solid rgba(0, 229, 255, 0.35) !important;
+    border-radius: 12px !important;
+    font-size: 16px !important;
+    color: #eafbff !important;
+    margin-top: 10px;
+    box-shadow: 0 0 15px rgba(0, 229, 255, 0.25) !important;
+  }
+  .linkedin-link:hover,
+  .linkedin-link:active {
+    background: rgba(0, 229, 255, 0.18) !important;
+    border-color: #00e5ff !important;
+    transform: scale(1.02);
+  }
+}

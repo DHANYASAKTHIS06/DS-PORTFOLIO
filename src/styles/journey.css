@@ -1,0 +1,445 @@
+/* MAIN CONTAINER */
+.journey-section {
+  padding: 80px 40px;
+  background: #050816; /* Dark navy */
+  color: white;
+  text-align: center;
+  box-sizing: border-box;
+}
+
+/* TITLE & SUBTITLE */
+.journey-title {
+  font-size: 48px;
+  font-weight: 900;
+  color: #00e5ff; /* Cyan */
+  text-shadow: 0 0 10px #00bfff, 0 0 20px #00bfff, 0 0 40px #00e5ff;
+  margin-bottom: 15px;
+}
+
+.journey-subtitle {
+  font-size: 17px;
+  color: #9bb5c9; /* Dimmed slate blue */
+  max-width: 650px;
+  margin: 0 auto 60px auto;
+  line-height: 1.6;
+  font-weight: 400;
+}
+
+/* TIMELINE TRACK */
+.timeline-container {
+  position: relative;
+  width: 100%;
+  max-width: 800px;
+  margin: 0 auto 60px;
+  height: 60px;
+}
+
+.timeline-line {
+  position: absolute;
+  top: 50%;
+  left: 0;
+  width: 100%;
+  height: 4px;
+  background: rgba(0, 229, 255, 0.15);
+  transform: translateY(-50%);
+  border-radius: 20px;
+  z-index: 1;
+}
+
+.timeline-line-active {
+  position: absolute;
+  top: 50%;
+  left: 0;
+  height: 4px;
+  background: linear-gradient(90deg, #00bfff, #00e5ff); /* Electric blue to Cyan */
+  transform: translateY(-50%);
+  border-radius: 20px;
+  z-index: 1;
+  transition: width 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+  box-shadow: 0 0 8px #00e5ff;
+}
+
+/* TIMELINE DOTS & LABELS */
+.timeline-dots {
+  display: flex;
+  justify-content: space-between;
+  position: relative;
+  top: 18px;
+  z-index: 2;
+  width: 100%;
+}
+
+.dot-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+  position: relative;
+  cursor: pointer;
+  flex: 1;
+}
+
+.dot {
+  width: 20px;
+  height: 20px;
+  background: #030c1a; /* Dark navy */
+  border: 3px solid #00e5ff; /* Cyan */
+  border-radius: 50%;
+  cursor: pointer;
+  transition: transform 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275), 
+              box-shadow 0.3s ease, 
+              background-color 0.3s ease, 
+              border-color 0.3s ease;
+  box-shadow: 0 0 6px rgba(0, 229, 255, 0.2);
+  outline: none;
+}
+
+.dot-wrapper:hover .dot {
+  transform: scale(1.3);
+  box-shadow: 0 0 12px #00e5ff, 0 0 20px rgba(0, 229, 255, 0.4);
+  background: #00e5ff;
+}
+
+.dot.active {
+  background: #00bfff; /* Electric Blue */
+  border-color: #fff;
+  box-shadow: 0 0 16px #00e5ff, 0 0 25px #00bfff, 0 0 35px rgba(0, 191, 255, 0.5);
+  transform: scale(1.4);
+}
+
+.dot-label {
+  font-size: 13.5px;
+  font-weight: 700;
+  color: rgba(155, 181, 201, 0.6);
+  transition: color 0.3s ease, text-shadow 0.3s ease, transform 0.3s ease;
+}
+
+.dot-wrapper:hover .dot-label {
+  color: #eafbff;
+}
+
+.dot-label.active {
+  color: #00e5ff;
+  text-shadow: 0 0 8px rgba(0, 229, 255, 0.6);
+  transform: scale(1.05);
+}
+
+/* GLASSMORPHIC JOURNEY CARD */
+.journey-card {
+  max-width: 800px;
+  margin: 0 auto;
+  background: rgba(10, 15, 31, 0.45); /* Cyber dark navy */
+  backdrop-filter: blur(14px) saturate(160%);
+  -webkit-backdrop-filter: blur(14px) saturate(160%);
+  border: 1px solid rgba(0, 229, 255, 0.15);
+  padding: 34px 40px;
+  border-radius: 18px;
+  text-align: left;
+  box-shadow: 0 12px 40px 0 rgba(0, 0, 0, 0.4);
+  box-sizing: border-box;
+  animation: journeyCardAppear 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
+}
+
+@keyframes journeyCardAppear {
+  0% {
+    opacity: 0;
+    transform: translateY(25px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.journey-card:hover {
+  border-color: rgba(0, 229, 255, 0.35);
+  box-shadow: 0 16px 45px rgba(0, 229, 255, 0.15), 
+              0 0 25px rgba(0, 191, 255, 0.08),
+              inset 0 0 12px rgba(0, 229, 255, 0.1);
+}
+
+/* HEADER: ICON, TITLES, BADGE */
+.journey-card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 20px;
+  width: 100%;
+  border-bottom: 1px solid rgba(0, 229, 255, 0.12);
+  padding-bottom: 24px;
+  margin-bottom: 24px;
+  flex-wrap: wrap;
+}
+
+.journey-card-left {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.journey-card-icon-box {
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  background: rgba(0, 229, 255, 0.1);
+  border: 1px solid rgba(0, 229, 255, 0.25);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 0 12px rgba(0, 229, 255, 0.18);
+  flex-shrink: 0;
+}
+
+.journey-icon-svg {
+  font-size: 24px;
+  color: #00e5ff;
+}
+
+.journey-card-titles {
+  display: flex;
+  flex-direction: column;
+}
+
+.journey-card-date {
+  font-size: 13.5px;
+  font-weight: 800;
+  color: #00e5ff;
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+}
+
+.journey-card-role {
+  margin: 4px 0 6px 0;
+  font-size: 24px;
+  font-weight: 900;
+  color: #eafbff; /* Soft white */
+  text-shadow: 0 0 5px rgba(0, 229, 255, 0.25);
+  line-height: 1.3;
+}
+
+.journey-card-company {
+  font-size: 14.5px;
+  color: #9bb5c9; /* Dimmed slate blue */
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-weight: 500;
+}
+
+.company-icon {
+  color: #00e5ff;
+  font-size: 13px;
+}
+
+/* INTERNSHIP BADGES */
+.journey-internship-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: linear-gradient(135deg, rgba(0, 229, 255, 0.12), rgba(0, 191, 255, 0.12));
+  border: 1px solid rgba(0, 229, 255, 0.45);
+  border-radius: 20px;
+  padding: 6px 14px;
+  font-size: 12px;
+  font-weight: 700;
+  color: #00e5ff;
+  box-shadow: 0 0 12px rgba(0, 229, 255, 0.2);
+  text-shadow: 0 0 5px rgba(0, 229, 255, 0.3);
+  margin-top: 4px;
+}
+
+.badge-glow-dot {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background-color: #00e5ff;
+  box-shadow: 0 0 8px #00e5ff, 0 0 15px #00e5ff;
+  animation: pulseDot 2s infinite alternate;
+}
+
+@keyframes pulseDot {
+  0% {
+    transform: scale(0.9);
+    opacity: 0.6;
+  }
+  100% {
+    transform: scale(1.3);
+    opacity: 1;
+  }
+}
+
+/* DESCRIPTION */
+.journey-card-desc {
+  margin: 0 0 28px 0;
+  font-size: 16px;
+  line-height: 1.8;
+  color: #eafbff;
+  font-weight: 400;
+}
+
+/* CAREER PROGRESSION BAR */
+.growth-tracker {
+  border-top: 1px solid rgba(0, 229, 255, 0.12);
+  padding-top: 24px;
+  width: 100%;
+}
+
+.growth-tracker-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 12px;
+  font-size: 14px;
+}
+
+.growth-label {
+  color: #9bb5c9;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-weight: 600;
+}
+
+.growth-icon {
+  color: #00e5ff;
+  font-size: 14px;
+}
+
+.growth-level-text {
+  color: #eafbff;
+  font-weight: 800;
+  text-shadow: 0 0 5px rgba(0, 229, 255, 0.25);
+}
+
+.growth-progress-bar {
+  width: 100%;
+  height: 8px;
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 10px;
+  overflow: hidden;
+  position: relative;
+  border: 1px solid rgba(0, 229, 255, 0.05);
+}
+
+.growth-progress-fill {
+  height: 100%;
+  background: linear-gradient(90deg, #00bfff, #00e5ff);
+  border-radius: 10px;
+  transition: width 0.8s cubic-bezier(0.1, 0.8, 0.2, 1);
+  box-shadow: 0 0 8px rgba(0, 229, 255, 0.5);
+}
+
+/* RESPONSIVE LAYOUT */
+@media (max-width: 768px) {
+  .journey-section {
+    padding: 60px 20px !important;
+  }
+  .journey-title {
+    font-size: 40px;
+  }
+  .timeline-container {
+    height: 80px;
+    margin-bottom: 45px;
+    width: 96%;
+  }
+  .dot {
+    width: 24px !important;
+    height: 24px !important;
+  }
+  .dot.active {
+    transform: scale(1.25);
+  }
+  .dot-label {
+    font-size: 13px !important;
+    font-weight: 700;
+  }
+  .journey-card {
+    width: 96% !important;
+    padding: 30px 24px !important;
+    margin: 0 auto !important;
+    box-sizing: border-box;
+  }
+  .journey-card-role {
+    font-size: 23px !important;
+  }
+  .journey-card-desc {
+    font-size: 15.5px !important;
+    line-height: 1.75;
+  }
+  .journey-card-icon-box {
+    width: 52px;
+    height: 52px;
+  }
+  .journey-icon-svg {
+    font-size: 22px;
+  }
+}
+
+@media (max-width: 576px) {
+  .journey-section {
+    padding: 50px 16px !important;
+  }
+  .journey-title {
+    font-size: 34px;
+  }
+  .journey-subtitle {
+    font-size: 15px;
+    margin-bottom: 35px;
+  }
+  .timeline-container {
+    margin-bottom: 35px;
+    height: 75px;
+  }
+  .dot {
+    width: 22px !important;
+    height: 22px !important;
+  }
+  .dot-label {
+    font-size: 12px !important;
+  }
+  .journey-card {
+    width: 100% !important;
+    padding: 24px 20px !important;
+  }
+  .journey-card-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 15px;
+    padding-bottom: 18px;
+    margin-bottom: 18px;
+  }
+  .journey-card-left {
+    gap: 12px;
+  }
+  .journey-card-role {
+    font-size: 21px !important;
+  }
+  .journey-card-company {
+    font-size: 14px;
+  }
+  .journey-internship-badge {
+    margin-top: 0;
+    align-self: flex-start;
+    padding: 5px 12px;
+    font-size: 11.5px;
+  }
+  .journey-card-desc {
+    font-size: 15px !important;
+    line-height: 1.7;
+    margin-bottom: 20px;
+  }
+  .growth-tracker-header {
+    font-size: 13px;
+  }
+  .growth-progress-bar {
+    height: 8px;
+  }
+}
+.journey-down {
+  border-color: rgba(0, 229, 255, 0.25);
+  color: #00e5ff;
+}
+.journey-down:hover {
+  box-shadow: 0 0 25px #00bfff, 0 0 35px #00e5ff;
+  color: #eafbff;
+}
