@@ -12,16 +12,17 @@ export default function Experience() {
   const experiences = [
     {
       id: 'webdev',
-      role: 'Web Development Intern',
+      role: 'Full Stack Development Intern',
       company: 'Strategic Knights',
-      period: 'Nov 11 – Nov 27, 2025',
-      desc: 'Completed a hands-on internship focused on HTML, CSS, JavaScript, and React. Built real-world UI components, improved responsive layouts, and created mini-projects used inside the team workspace.',
+      period: 'November 2025',
+      status: 'Completed',
+      desc: 'Completed a hands-on Full Stack Web Development Internship focused on React, frontend development, backend integration, databases, API development, deployment, and real-world web application development.',
       highlights: [
-        '🚀 Built interactive components using React Hooks',
-        '⚡ Improved project layouts with advanced CSS animations',
-        '🔧 Worked on bug-fixing, UI polishing, and responsive behavior',
+        '🚀 Built interactive components using React Hooks and modern state management',
+        '⚡ Improved project layouts with advanced CSS animations and responsive design',
+        '🔧 Worked on bug-fixing, UI polishing, API integration, and deployment',
       ],
-      skills: ['HTML', 'CSS', 'JavaScript', 'React'],
+      skills: ['React', 'JavaScript', 'HTML5', 'CSS3', 'API Integration'],
       icon: <FaLaptopCode className="exp-icon-svg" />,
       classType: 'web-card',
     },
@@ -29,14 +30,15 @@ export default function Experience() {
       id: 'ml',
       role: 'Machine Learning Intern',
       company: 'Krish Tec',
-      period: 'May 14 – May 31, 2026',
-      desc: 'Completed a hands-on Machine Learning internship focused on data preprocessing, model training, deep learning, and real-world AI applications. Developed intelligent systems including Calci Rescue AI App and Mask AI while gaining practical experience in machine learning workflows.',
+      period: 'May 2026 – May 2026',
+      status: 'Completed',
+      desc: 'Completed a one-month Machine Learning Internship at Krish Tec, gaining practical experience in data handling, data visualization, regression, classification, and deep learning. Worked on hands-on ML projects involving Student Stress Detection, Cats vs Dogs Classification, and predictive modeling.',
       highlights: [
-        '🧠 Built machine learning models for real-world problem solving',
-        '🤖 Worked with Deep Learning and CNN-based image classification systems',
-        '📊 Performed data preprocessing, model training, testing, and evaluation',
+        '🧠 Worked on hands-on ML projects involving Student Stress Detection and Cats vs Dogs Classification',
+        '📊 Gained practical experience in data handling, data visualization, regression, and classification',
+        '🤖 Explored deep learning workflows and predictive modeling for real-world applications',
       ],
-      skills: ['Machine Learning', 'Deep Learning', 'CNN', 'Python'],
+      skills: ['Machine Learning', 'Deep Learning', 'Data Handling', 'Python', 'Regression', 'Classification'],
       icon: <FaBrain className="exp-icon-svg" />,
       classType: 'ml-card',
     },
@@ -59,7 +61,8 @@ export default function Experience() {
               <div className="exp-title-box">
                 <h2 className="role">{exp.role}</h2>
                 <p className="company">
-                  {exp.company} • {exp.period}
+                  <span>{exp.company} • {exp.period}</span>
+                  {exp.status && <span className="exp-status-tag">{exp.status}</span>}
                 </p>
               </div>
             </div>
