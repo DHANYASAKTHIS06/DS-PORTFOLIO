@@ -2,6 +2,7 @@ import React from 'react';
 import { FaLinkedin, FaGithub } from 'react-icons/fa';
 import { SiLeetcode, SiHackerrank } from 'react-icons/si';
 import { FiChevronDown } from 'react-icons/fi';
+import profilePhoto from '../assets/photo.jpg';
 
 export default function Hero() {
   const scrollTo = (id) => {
@@ -50,7 +51,7 @@ Developed projects such as Calci Rescue AI App, Mask AI, SkillSwap, and Internsh
       {/* CENTER — RECTANGULAR IMAGE */}
       <div className="hero-image-box">
         <img
-          src="https://image2url.com/images/1763612841718-91076127-6c04-4764-9405-97318b1e01e7.jpeg"
+          src={profilePhoto}
           alt="Dhanyasakthi"
           className="hero-image"
         />
