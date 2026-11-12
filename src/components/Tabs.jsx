@@ -26,6 +26,13 @@ export default function Tabs({ activeTab, setActiveTab }) {
         Academics
       </button>
       <button
+        className={activeTab === 'responsibilities' ? 'active' : ''}
+        onClick={() => setActiveTab('responsibilities')}
+      >
+        <span className="tab-icon">⚡</span>
+        Responsibilities
+      </button>
+      <button
         className={activeTab === 'CertificateGallery' ? 'active' : ''}
         onClick={() => setActiveTab('CertificateGallery')}
       >

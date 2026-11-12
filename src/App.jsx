@@ -5,6 +5,7 @@ import Skills from './components/Skills';
 import Resume from './components/Resume';
 import Blogs from './components/Blogs';
 import AcademicProfile from './components/AcademicProfile';
+import Responsibilities from './components/Responsibilities';
 import Feedback from './components/Feedback';
 import CertificateGallery from './components/CertificateGallery';
 import Experience from './components/Experience';
@@ -13,6 +14,7 @@ import {
   FaUser,
   FaCode,
   FaGraduationCap,
+  FaUsers,
   FaCertificate,
   FaBriefcase,
   FaFileAlt,
@@ -82,6 +84,14 @@ export default function App() {
               onClick={() => setActiveTab('AcademicProfile')}
             >
               <FaGraduationCap className="nav-icon" /> Academics
+            </div>
+            <div
+              className={`float-tab ${
+                activeTab === 'responsibilities' ? 'active' : ''
+              }`}
+              onClick={() => setActiveTab('responsibilities')}
+            >
+              <FaUsers className="nav-icon" /> Responsibilities
             </div>
             <div
               className={`float-tab ${
@@ -174,6 +184,12 @@ export default function App() {
                 <FaGraduationCap className="nav-icon" /> Academics
               </div>
               <div
+                className={`mobile-nav-link ${activeTab === 'responsibilities' ? 'active' : ''}`}
+                onClick={() => navigateToSection('responsibilities')}
+              >
+                <FaUsers className="nav-icon" /> Responsibilities
+              </div>
+              <div
                 className={`mobile-nav-link ${activeTab === 'CertificateGallery' ? 'active' : ''}`}
                 onClick={() => navigateToSection('CertificateGallery')}
               >
@@ -242,6 +258,7 @@ export default function App() {
         {activeTab === 'profile' && <Profile />}
         {activeTab === 'skills' && <Skills />}
         {activeTab === 'AcademicProfile' && <AcademicProfile />}
+        {activeTab === 'responsibilities' && <Responsibilities />}
         {activeTab === 'CertificateGallery' && <CertificateGallery />}
         {activeTab === 'experience' && <Experience />}
         {activeTab === 'resume' && <Resume />}
